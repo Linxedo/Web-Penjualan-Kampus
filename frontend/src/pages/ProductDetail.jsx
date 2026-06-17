@@ -85,7 +85,7 @@ function ProductDetail() {
           <div className="col-lg-7 mb-4">
             {product.gambar ? (
               <img
-                src={`/uploads/${product.gambar}`}
+                src={product.gambar.startsWith('http') ? product.gambar : `/uploads/${product.gambar}`}
                 alt={product.nama}
                 className="product-detail-image"
                 onError={(e) => {

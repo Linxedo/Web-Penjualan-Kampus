@@ -51,7 +51,7 @@ function ProductForm() {
         status: product.status || 'tersedia',
       });
       if (product.gambar) {
-        setImagePreview(`/uploads/${product.gambar}`);
+        setImagePreview(product.gambar.startsWith('http') ? product.gambar : `/uploads/${product.gambar}`);
       }
     } catch (error) {
       console.error('Error loading product:', error);

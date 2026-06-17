@@ -94,7 +94,7 @@ function MyProducts() {
                             justifyContent: 'center'
                           }}>
                             {product.gambar ? (
-                              <img src={`/uploads/${product.gambar}`} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                              <img src={product.gambar.startsWith('http') ? product.gambar : `/uploads/${product.gambar}`} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             ) : (
                               <i className="bi bi-image" style={{ color: '#b8bdd4' }}></i>
                             )}

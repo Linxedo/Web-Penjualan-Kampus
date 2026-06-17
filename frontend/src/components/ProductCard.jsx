@@ -16,7 +16,7 @@ function ProductCard({ product }) {
       <div className="product-card-image-wrapper">
         {product.gambar ? (
           <img
-            src={`/uploads/${product.gambar}`}
+            src={product.gambar.startsWith('http') ? product.gambar : `/uploads/${product.gambar}`}
             alt={product.nama}
             className="product-card-image"
             onError={(e) => {

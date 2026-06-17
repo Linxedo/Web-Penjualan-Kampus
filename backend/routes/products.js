@@ -156,7 +156,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', authenticateToken, upload.single('gambar'), async (req, res) => {
   try {
     const { nama, deskripsi, harga, kategori_id, kondisi, lokasi } = req.body;
-    const gambar = req.file ? req.file.filename : null;
+    const gambar = req.file ? req.file.path : null;
 
     if (!nama || !harga) {
       return res.status(400).json({ message: 'Nama dan harga produk wajib diisi.' });
@@ -194,7 +194,7 @@ router.put('/:id', authenticateToken, upload.single('gambar'), async (req, res) 
     }
 
     const { nama, deskripsi, harga, kategori_id, kondisi, lokasi, status } = req.body;
-    const gambar = req.file ? req.file.filename : product.gambar;
+    const gambar = req.file ? req.file.path : product.gambar;
 
     const result = await pool.query(
       `UPDATE products SET nama = $1, deskripsi = $2, harga = $3, gambar = $4, kategori_id = $5, 

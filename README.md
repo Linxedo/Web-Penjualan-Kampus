@@ -36,7 +36,7 @@ Platform jual beli barang antar mahasiswa. Memungkinkan mahasiswa untuk menjual 
 | Backend   | Node.js + Express.js               |
 | Database  | PostgreSQL                          |
 | Auth      | JWT (JSON Web Token) + bcrypt       |
-| Upload    | Multer                              |
+| Upload    | Multer + Cloudinary                 |
 
 ---
 
